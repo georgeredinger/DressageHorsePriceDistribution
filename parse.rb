@@ -3,7 +3,7 @@ $equine=[]
 
 #Dir.glob('for_sale100*.html') do |item|
 Dir.glob('*.html') do |item|
-    puts "File Name:#{item}"
+#    puts "File Name:#{item}"
     text = File.read(item)
     if ((item =~ /sold/) == nil) 
         status ="ForSale"
@@ -35,22 +35,40 @@ Dir.glob('*.html') do |item|
             if contact_name.text().empty?  
                 next
             end
-            puts "ForSale" 
-            puts "name          #{name.text().strip}" 
-            puts "address          #{address.text().strip}" 
-            puts "price          #{price.text().strip}" 
-            puts "contact_name  #{contact_name.text()}" 
-            puts "contact_phone #{contact_phone.text()}" 
-            puts "contact_email #{contact_email.text()}" 
-            puts "gender        #{gender.text()}" 
-            puts "birth_year    #{birth_year.text()}"
-            puts "height        #{height.text()}" 
-            puts "breed         #{breed.text()}" 
-            puts "sire          #{sire.text()}" 
-            puts "damsire       #{dam_sire.text()}" 
-            puts "color         #{color.text()}" 
-            puts "teaser         #{teaser.text()}" 
-            puts "key:  #{sire.text}_#{dam_sire.text}_#{birth_year.text}_#{height.text}_#{gender.text}_#{breed.text}".strip.gsub(/\s+/, "")
+       #     puts "ForSale" 
+       #     puts "name          #{name.text().strip}" 
+       #     puts "address          #{address.text().strip}" 
+       #     puts "price          #{price.text().strip}" 
+       #     puts "contact_name  #{contact_name.text()}" 
+       #     puts "contact_phone #{contact_phone.text()}" 
+       #     puts "contact_email #{contact_email.text()}" 
+       #     puts "gender        #{gender.text()}" 
+       #     puts "birth_year    #{birth_year.text()}"
+       #     puts "height        #{height.text()}" 
+       #     puts "breed         #{breed.text()}" 
+       #     puts "sire          #{sire.text()}" 
+       #     puts "damsire       #{dam_sire.text()}" 
+       #     puts "color         #{color.text()}" 
+       #     puts "teaser         #{teaser.text()}" 
+       #     puts "key:  #{sire.text}_#{dam_sire.text}_#{birth_year.text}_#{height.text}_#{gender.text}_#{breed.text}".strip.gsub(/\s+/, "")
+       #     puts "-"*20
+
+            print  "#{sire.text}_#{dam_sire.text}_#{birth_year.text}_#{height.text}_#{gender.text}_#{breed.text}".strip.gsub(/\s+/, "")
+            print ",ForSale" 
+            print  ", #{name.text().strip}" 
+            print  ",    #{address.text().strip}" 
+            print  ",  #{price.text().strip}" 
+            print  ", #{contact_name.text()}" 
+            print  ", #{contact_phone.text()}" 
+            print  ", #{contact_email.text()}" 
+            print  ", #{gender.text()}" 
+            print  ", #{birth_year.text()}"
+            print  ", #{height.text()}" 
+            print  ", #{breed.text()}" 
+            print  ", #{sire.text()}" 
+            print  ", #{dam_sire.text()}" 
+            print  ",        #{color.text()}" 
+            puts  ",         #{teaser.text()}" 
             puts "-"*20
         end
     else
@@ -72,19 +90,19 @@ Dir.glob('*.html') do |item|
             if contact_name.text().empty?  
                 next
             end
-            puts "Sold"
-            puts "name          #{name.text().strip}" 
-            puts "contact_name  #{contact_name.text()}" 
-            puts "contact_phone #{contact_phone.text()}" 
-            puts "contact_email #{contact_email.text()}" 
-            puts "gender        #{gender.text()}" 
-            puts "birth_year    #{birth_year.text()}"
-            puts "height        #{height.text()}" 
-            puts "breed         #{breed.text()}" 
-            puts "sire          #{sire.text()}" 
-            puts "color         #{color.text()}" 
-            puts "teaser        #{teaser.text()}" 
-            puts "key:  #{sire.text}_#{dam_sire.text}_#{birth_year.text}_#{height.text}_#{gender.text}_#{breed.text}".strip.gsub(/\s+/, "")
+            print  "#{sire.text}_#{dam_sire.text}_#{birth_year.text}_#{height.text}_#{gender.text}_#{breed.text}".strip.gsub(/\s+/, "")
+            print  ",Sold"
+            print  ",#{name.text().strip}" 
+            print  ",#{contact_name.text()}" 
+            print  ",#{contact_phone.text()}" 
+            print  ",#{contact_email.text()}" 
+            print  ",#{gender.text()}" 
+            print  ",#{birth_year.text()}"
+            print  ",#{height.text()}" 
+            print  ",#{breed.text()}" 
+            print  ",#{sire.text()}" 
+            print  ",#{color.text()}" 
+            puts   ",#{teaser.text()}" 
             puts "-"*20
         end
     end
